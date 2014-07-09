@@ -1,0 +1,2810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="http://tempuri.org/type" xmlns:wsdlns="http://tempuri.org/wsdl/" targetNamespace="http://tempuri.org/type" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://tempuri.org/type">
+      <xsd:complexType name="ewarebase" abstract="true">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:simpleType name="crmrecordtype">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="string" />
+          <xsd:enumeration value="datetime" />
+          <xsd:enumeration value="integer" />
+          <xsd:enumeration value="decimal" />
+          <xsd:enumeration value="crmrecord" />
+          <xsd:enumeration value="multiselectfield" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ewarebaselist">
+        <xsd:sequence>
+          <xsd:element name="entityname" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:ewarebase" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="idbase" abstract="true">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase" />
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="cases">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="assigneduserid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="caseid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="closed" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="closedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="customerref" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="foundver" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="notifytime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opened" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="openedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primaryaccountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primarycompanyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primarypersonid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="priority" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="problemnote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="problemtype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="product" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productarea" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="referenceid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="serialnumber" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="slaambercloseby" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="slacloseby" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="slaid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="slaseverity" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="solutionnote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="solutiontype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="source" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="stage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetclose" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetver" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="communication">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="actcode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="action" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="actvcode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="bcc" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="caseid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cc" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="communicationid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="completedtime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="corpspince" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="crmonly" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="datetime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="docdir" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="docname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="duration" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="email" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="emaillinkscreated" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="exception" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="from" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="giftpromised" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gmaccountno" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gmrecid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="hasattachments" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="isalldayevent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ishtml" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="isreplytomsgid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="isstub" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="leadid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="location" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="meetingid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="messageid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="note" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="notifydelta" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="notifytime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opportunityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="organizer" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="originaldatetime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="originaltodatetime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="outcome" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="outlookid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="percentcomplete" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="priority" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="private" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quoteid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="recurrenceid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="reference" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="replyto" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="resultcode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="rscode" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="showed" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="showndatetime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="smsmessagesent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="smsnotification" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="solutionid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="subject" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetlistid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="taskreminder" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="testsid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="to" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="todatetime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="waveitemid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+              <xsd:element minOccurs="0" name="userid" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="companyid" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="personid" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="addressid" nillable="true" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="company">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="people" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" name="address" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" name="email" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" name="phone" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="employees" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enrolled" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enrolledby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enrolleddatetime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="groupname" type="typens:multiselectfield" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="indcode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="librarydir" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mailrestriction" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="optout" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="potentialstudents" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primaryaccountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primaryaddressid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primarycompany" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primarypersonid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primaryuserid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="progressnote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="revenue" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="sector" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="slaid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="source" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="territory" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uploaddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="website" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="installment">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentamount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentamountpaid" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentcomment" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentdatetpaid" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="loanid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="userid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="lead">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="addressuszipplusfour" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="age" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="areaofstudy" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="assigneduserid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="avayacampaignname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="avayaskillname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="closed" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyaddress1" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyaddress2" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyaddress3" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyaddress4" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyaddress5" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companycity" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companycountry" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyemployees" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyindustry" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companymatch" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companypostcode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyrevenue" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companystate" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companywebsite" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="contacttime" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="currentage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="datauploadid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="decisionmaker" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="decisiontimeframe" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="details" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dsfperson" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gender" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="leadcapturedate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="leadid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mailrestriction" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mainproductinterest" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgmediaid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nickname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="notifytime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opened" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opportunityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="optout" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personacademiclevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personadmissionyear" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personagent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personbizunit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="persondob" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personemail" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personfaculty" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personfaxareacode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personfaxcountrycode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personfaxnumber" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personfirstname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="persongmaccountno" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personlastname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personlineid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmiddlename" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmktg_source" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmktg_subsource" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmktgmediacat" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmktgmediaid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmktgmediapage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmktgmisc" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmktgsupplier" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmobileareacode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmobilenumber" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personmobilephone" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personnickname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personphoneareacode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personphonecountrycode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personphonenumber" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personsalasryrange" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personsalutation" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personschoolname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personsegment" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personsource" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personstudypurpose" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="persontitle" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personuniversityname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primarycompanyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primarypersonid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="priority" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="rateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="rating" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="reasonnotinterested" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="schooltype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="sector" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="source" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="stage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="subscribenewsletter" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="subscribesms" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uploaddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="waveitemid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="loan">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="currentmonth" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="depositamount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lastpaymentdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="loanamount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="loanid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="loanmonths" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="loanstartdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="loanstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderamount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="remaining" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="userid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="opportunity">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="assigneduserid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="certainty" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="closed" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="currency" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="customerref" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="decisiontimeframe" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="durationtype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="forecast" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="forecast_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="fpdiscount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="leadid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nodiscamtsum" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nodiscamtsum_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="note" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="notifytime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opened" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opportunityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primaryaccountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primarycompanyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primarypersonid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="priority" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="product" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="referral" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="referral_personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="scenario" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="smssent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="source" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="stage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="subjecttopic" type="typens:multiselectfield" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetclose" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="total" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="total_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="totalorders" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="totalorders_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="totalquotes" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="totalquotes_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="waveitemid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="orders">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="orderitems" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="associatedid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="billaddress" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="conflictresdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="consignee" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="contactid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="contractstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="currency" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="customorderid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountpc" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discounttype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="donotreprice" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="employeeref" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="employeerefchange" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="expiredelivery" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="fullypaid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="fullypaiddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gmaccountno" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="grossamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="isquote" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lineitemdisc" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nettamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nodiscamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opened" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opportunityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderquoteid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="payterms" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="poref" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="pricinglistid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promotion" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promotionchange" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="reference" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="remainingamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="repricenotify" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="repricingstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="requestwseloanapproval" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="rollup" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="salesrepr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="shipaddress" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="shipmethod" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssds_endlevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssds_startlevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studentref" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studentrefchange" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="synchmessage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="synchstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tax" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tax_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="taxrate" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="wseloanapproved" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="wsiloanid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="person">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="address" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" name="email" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" name="phone" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="academiclevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="accountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="acptfacultyname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="acptuniname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="admissionyear" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="age" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="agent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="areaofstudy" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="bookedagent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="career" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="choosetostudy1" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="choosetostudy2" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="choosetostudy3" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="conflictresdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="contacttime" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="contractstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="decisionmaker" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="decisiontimeframe" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="department" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dob" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dsfboothid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dsfleadstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dsfperson" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eafaculty1" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eafaculty2" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eafaculty3" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eafaculty4" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eafaculty5" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eauni1" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eauni2" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eauni3" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eauni4" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eauni5" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="edulevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="faculty" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="firstname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gender" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gmaccountno" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradecuaatmath" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradecuaatverbal" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradecuats" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradecuatsnano" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradecutaddrawing" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradecutep" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradegpa" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradeielts" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradeothers" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradesat2biology" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradesat2chemistry" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradesat2physics" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradesatmath" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradesatreading" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradetoefl" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="gradetuget" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="groupname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="idcard" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="idcardno" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="incomelevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="issecondary" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lastname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="librarydir" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lineid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="location" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mailrestriction" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="maritalstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="middlename" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgadid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgcampaign" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgcampaignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgmediacat" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgmediaid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgmediapage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgmisc" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgsource" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgsubsource" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mktgsupplier" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nationality" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nickname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="optout" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="parentname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="passport" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personbizchannel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personimage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="phonevalid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primaryaddressid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primaryperson" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="primaryuserid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="profession" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="purchasetimeframe" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="recordtype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="salaryrange" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="salutation" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="schoolname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="schooltype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="segment" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="source" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssds_enc_curunit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssds_enc_endunit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssds_enc_startunit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssds_last_actvdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssdsstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssdsstudentcode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studentid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studypurpose" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="subscribenewsletter" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="subscribesms" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="suffix" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="surveyaccesskey" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="territory" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="testpassword" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="testusername" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tier" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="title" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="titlecode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tmkagent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="travelmethod" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tutorname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="universityname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uploaddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="waveitemid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="website" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="quotes">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="quoteitems" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="associatedid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="billaddress" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="conflictresdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="consignee" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="contactid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="currency" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountpc" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discounttype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="donotreprice" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="employeeref" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="endlevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="estcompletedate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="eststartdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="expiredelivery" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="fpdiscount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="grossamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="isquote" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lineitemdisc" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nettamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nodiscamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opened" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opportunityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderquoteid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="payterms" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="poref" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="pricinglistid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promotion" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="reference" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="referral" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="referral_personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="repricenotify" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="repricingstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="rollup" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="salesrepr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="shipaddress" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="shipmethod" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startlevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studentref" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="synchmessage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="synchstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tax" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tax_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="taxrate" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="totalstudytime" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="receipt">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="bankfeeamount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="bankfeeamount_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="bankfeerate" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="card_loannumber" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cardname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comment" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="date" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountamount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountamount_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountrate" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="loaninstallmentid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="paymentmethod" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="paymentmethodtype" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="paymenttype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="receiptamount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="receiptamount_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="receiptid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="reciepttype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="totalamount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="totalamount_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="userid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="tests">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nextlevel" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="result" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="testname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="testsid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="yyyy_mm" type="xsd:string" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="address">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="address1" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="address2" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="address3" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="address4" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="address5" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="addressid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="city" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="country" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="postcode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="state" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uszipplusfour" type="xsd:string" />
+              <xsd:element minOccurs="0" name="companyid" nillable="true" type="xsd:int" />
+              <xsd:element minOccurs="0" name="personid" nillable="true" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="address_link">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="accountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="addressid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="addresslinkid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="campaigns">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="assigneduserid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="budget" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="budget_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="campaignid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="campaigntype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cost" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cost_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dripdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="emarketingaccountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="groupid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="launched" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="spstatuscode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="spstatusmessage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetleads" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetsms" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="channel">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="owner" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="rule" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="teamtype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="comm_link">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_accountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_communicationid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_companyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_initialwave" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_leadid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_notifytime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_orderid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_quoteid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_userid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="comm_waveresponse" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commlinkid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="entityid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="externalpersonid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="isexternalattendee" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="massemailsent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="recipient" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="recordid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="reminder" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="smsmessagesent" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="commactcode">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="comaction" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commactcodeid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="display" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="commref">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="commaction" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commrefid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="commrscode">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="commaction" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commrscodeid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="display" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="currency">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="currencyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="decimalprecision" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="rate" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="symbol" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="customid">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="center" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="customidid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="entity" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nextid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="done">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="encounter_unit" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="teacher" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="dsfperson">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="customid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dsfteamid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="emailaddress" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="firstname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lastname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mobilephone" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="nickname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="dsfteam">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="customid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dsfteamid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="email">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="areacode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="emailaddress" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="emailid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="number" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="emaillink">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="emailid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="entityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="linkid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="recordid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="installmentreceipt">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentamountpa" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentdatepaid" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="installmentreceiptid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="receiptid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="userid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="library">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="accountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="active" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="campaignid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="caseid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="category" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="communicationid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="customorderid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="emailtemplateid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="entity" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="filename" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="filepath" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="filesize" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="global" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="isinlineimage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="language" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lastaccessed" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="leadid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="libraryid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mergetemplate" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="note" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opportunityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="private" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quoteid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="solutionid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="testsid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="userid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="newproduct">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="pricing" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" name="uomcategorycollection" nillable="true" type="typens:ewarebase" />
+              <xsd:element minOccurs="0" name="productfamilyname" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="active" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="code" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commissionpayable" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cycle" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="hours" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="integrationid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="numbeofmeetings" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productfamilyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="room" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="teacher" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uomcategory" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="notes">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="foreignid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="foreigntableid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="note" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="noteid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="nps">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="datetime" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="last" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lowest" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="npsid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="previous" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="score" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="userid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="opportunityitem">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discount_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opportunityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="opportunityitemid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="originallistprice" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="originallistprice_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quantity" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quotedprice" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quotedprice_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quotedpricetotal" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quotedpricetotal_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="orderitems">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountrate" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountsum" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="donotreprice" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="employeerefamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="employeerefamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="erplocation" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="freelevel" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="freerenewallevel" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lineitemid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="linenumber" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="linetype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="listprice" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderquoteid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productfamilyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promoamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promoamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quantity" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quotedprice" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quotedpricetotal" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="renewalamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="renewalamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="repricingstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studentrefamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studentrefamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="synchmessage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tax" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tax_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="taxrate" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uomid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="paymentmethod">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="bankfee" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="bankname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="beginingdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="paymentmethodfilterid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="paymentmethodid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="userid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="paymentmethodfilter">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="for" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lockafterdays" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="paymentmethodfilterid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="secterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="person_link">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="accountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="companyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personlinkid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="phone">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="areacode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="countrycode" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="number" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="phoneid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="phonelink">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="entityid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="linkid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="phoneid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="recordid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="pricing">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="pricingfamilyname" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" name="uomname" nillable="true" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="active" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="price" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="price_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="pricingid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="pricinglistid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uomid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="pricinglist">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="active" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="defaultvalue" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="erpdefaultvalue" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="integrationid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="pricinglistid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="prodiscount">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="prodiscountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="value" type="xsd:double" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="productfamily">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="active" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="familytype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="integrationid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productfamilyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="products">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="listprice" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="listprice_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="quoteitems">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountrate" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="discountsum" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="donotreprice" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="employeerefamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="employeerefamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="erplocation" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="freelevel" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="freerenewallevel" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lineitemid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="linenumber" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="linetype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="listprice" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="orderquoteid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productfamilyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="productid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promoamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promoamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quantity" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quotedprice" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="quotedpricetotal" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="renewalamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="renewalamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="repricingstatus" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studentrefamt" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studentrefamt_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="synchmessage" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tax" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="tax_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="taxrate" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uomid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="reserve">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="date" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="encounter_unit" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="teacher" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ssdscontract">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="concodltea" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="consultant" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="end_bol_unit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="endunit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssds_contractid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ssdscontractid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="start_bol_unit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startunit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="ssdssession">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="contractno" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lesson" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="level" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="score" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="section" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="unit" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="stddiscount">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="empltype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="emplvalue" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="renewaltype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="renewalvalue" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="stddiscountid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studnttype" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="studntvalue" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="student_activity">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="activity_type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="activitydate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="levels" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="student_activity_id" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="teacher" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="unit" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="student_activity_link">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="personid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status_index" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="student_activity_id" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="id" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="uom">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="active" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="defaultvalue" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="familyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="freelevel" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="freerenewallevel" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="integrationid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="units" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="uomid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="uomfamily">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="uoms" nillable="true" type="typens:ewarebaselist" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="active" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="defaultvalue" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="familyid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="integrationid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intforeignid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="intlastsyncdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="promote" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="users">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="firstname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="lastname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="logon" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="userid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="waveitems">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="assigneduserid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="budget" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="budget_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channel" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commchannel" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commdetails" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commpriority" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commsecterr" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="commsubject" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="contactedtext" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cost" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cost_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dailycalls" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="ddentrypoint" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="details" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dsfid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="dsfteam" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="email_sentcount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="introtext" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="mediaid" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="sms_sendcount" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetleads" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetlist" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetsms" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="type" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="waveid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="waveitemid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="waves">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" maxOccurs="1" name="assigneduserid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="budget" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="budget_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="campaignid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="channelid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cost" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="cost_cid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createdby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="enddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="startdate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="status" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetleads" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="targetsms" type="xsd:double" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="timestamp" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updatedby" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="waveid" type="xsd:int" />
+              <xsd:element minOccurs="0" maxOccurs="1" name="workflowid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:simpleType name="territorycode">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Worldwide" />
+          <xsd:enumeration value="Demo Data" />
+          <xsd:enumeration value="Thailand" />
+          <xsd:enumeration value="Bangkok" />
+          <xsd:enumeration value="Retail" />
+          <xsd:enumeration value="Area 1" />
+          <xsd:enumeration value="Silom" />
+          <xsd:enumeration value="Siam Tower" />
+          <xsd:enumeration value="Corporate" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="logon">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="username" type="xsd:string" />
+            <xsd:element name="password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="logonresult">
+        <xsd:sequence>
+          <xsd:element name="sessionid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="logonresponsetype">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="typens:logonresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="logoff">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="logoffresult">
+        <xsd:sequence>
+          <xsd:element name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="logoffresponsetype">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="typens:logoffresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SessionHeader">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="sessionId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="add">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="records" type="typens:ewarebase" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="addresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="records" type="typens:idbase" />
+          <xsd:element name="size" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:addresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="delete">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="records" type="typens:ewarebase" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="deleteresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deletesuccess" type="xsd:boolean" />
+          <xsd:element name="numberdeleted" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="typens:deleteresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="update">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="records" type="typens:ewarebase" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="updateresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="updatesuccess" type="xsd:boolean" />
+          <xsd:element minOccurs="1" name="numberupdated" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:updateresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="query">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="queryString" type="xsd:string" />
+            <xsd:element minOccurs="1" name="entityname" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="queryresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:ewarebase" />
+          <xsd:element name="size" type="xsd:int" />
+          <xsd:element name="more" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="queryresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="typens:queryresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="next">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="nextresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="typens:queryresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryentity">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="id" type="xsd:int" />
+            <xsd:element minOccurs="1" name="entityname" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="queryentityresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="records" type="typens:ewarebase" />
+          <xsd:element name="size" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="queryentityresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:queryentityresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="aisid">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="createddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="updateddate" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="id" type="xsd:int" />
+              <xsd:element minOccurs="0" name="deleted" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="updated" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="added" type="xsd:boolean" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="queryid">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="queryString" type="xsd:string" />
+            <xsd:element minOccurs="1" name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" name="orderby" type="xsd:string" />
+            <xsd:element minOccurs="0" name="journaltoken" type="xsd:dateTime" />
+            <xsd:element minOccurs="1" name="showdeletedrecords" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="queryidresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:aisid" />
+          <xsd:element name="size" type="xsd:int" />
+          <xsd:element name="more" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="queryidresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:queryidresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="nextqueryid">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:complexType name="crmrecord">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:sequence>
+              <xsd:element name="entityname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:recordfield" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="recordfield">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" name="type" type="typens:crmrecordtype" />
+              <xsd:element minOccurs="0" name="value" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:crmrecord" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="addrecord">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="records" type="typens:ewarebase" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addrecordresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:addresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updaterecord">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="records" type="typens:ewarebase" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updaterecordresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:updateresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryrecord">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="fieldlist" type="xsd:string" />
+            <xsd:element minOccurs="1" name="queryString" type="xsd:string" />
+            <xsd:element minOccurs="1" name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" name="orderby" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="queryrecordresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:crmrecord" />
+          <xsd:element name="size" type="xsd:int" />
+          <xsd:element name="more" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="queryrecordresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:queryrecordresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="nextqueryrecord">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="nextqueryrecordresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:queryrecordresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryidnodate">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="queryString" type="xsd:string" />
+            <xsd:element minOccurs="1" name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" name="showdeletedrecords" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="queryidnodateresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:aisid" />
+          <xsd:element name="size" type="xsd:int" />
+          <xsd:element name="more" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="queryidnodateresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:queryidnodateresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="nextqueryidnodate">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getversionstring" />
+      <xsd:complexType name="getversionstringresult">
+        <xsd:sequence>
+          <xsd:element name="versionstring" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getversionstringresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:getversionstringresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getdropdownvalues">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="entityname" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="dropdownvalues">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fieldname" type="xsd:string" />
+          <xsd:element minOccurs="0" name="entityname" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="dropdownvaluesresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:dropdownvalues" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getdropdownvaluesresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:dropdownvaluesresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="crmfield">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="length" type="xsd:int" />
+              <xsd:element minOccurs="0" name="required" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="name" type="xsd:string" />
+              <xsd:element minOccurs="0" name="type" type="xsd:string" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="getmetadata">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="entityname" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getallmetadata">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="tableinfo">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="tablename" type="xsd:string" />
+          <xsd:element minOccurs="0" name="prefix" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:crmfield" />
+          <xsd:element name="size" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getmetadataresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="typens:crmfield" />
+          <xsd:element name="size" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getmetadataresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:getmetadataresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="getallmetadataresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="tables" type="typens:tableinfo" />
+          <xsd:element name="size" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getallmetadataresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:getallmetadataresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addresource">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="entityname" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="records" type="typens:ewarebase" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="addresourceresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="records" type="typens:idbase" />
+          <xsd:element name="size" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addresourceresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="result" type="typens:addresourceresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="aresource">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:all>
+              <xsd:element minOccurs="0" name="firstname" type="xsd:string" />
+              <xsd:element minOccurs="0" name="lastname" type="xsd:string" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="aresourceid">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:idbase">
+            <xsd:all>
+              <xsd:element name="resourceid" type="xsd:int" />
+              <xsd:element minOccurs="0" name="firstname" type="xsd:string" />
+              <xsd:element minOccurs="0" name="lastname" type="xsd:string" />
+              <xsd:element name="logon" type="xsd:string" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="multiselectfield">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:ewarebase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="multiselectfieldname" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="records" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="crmid">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="typens:idbase">
+            <xsd:all>
+              <xsd:element name="crmid" type="xsd:int" />
+            </xsd:all>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="columnwidth">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="entityname" type="xsd:string" />
+            <xsd:element name="columnname" type="xsd:string" />
+            <xsd:element name="width" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="columnwidthresult">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="success" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="columnwidthresponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="result" type="typens:columnwidthresult" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="logonrequest">
+    <part name="parameters" element="typens:logon" />
+  </message>
+  <message name="logonresponsetype">
+    <part name="parameters" element="typens:logonresponsetype" />
+  </message>
+  <message name="logoffrequest">
+    <part name="parameters" element="typens:logoff" />
+  </message>
+  <message name="logoffresponsetype">
+    <part name="parameters" element="typens:logoffresponsetype" />
+  </message>
+  <message name="Header">
+    <part name="SessionHeader" element="typens:SessionHeader" />
+  </message>
+  <message name="nextrequest">
+    <part name="parameters" element="typens:next" />
+  </message>
+  <message name="nextresponse">
+    <part name="parameters" element="typens:nextresponse" />
+  </message>
+  <message name="nextqueryrecordrequest">
+    <part name="parameters" element="typens:nextqueryrecord" />
+  </message>
+  <message name="nextqueryrecordresponse">
+    <part name="parameters" element="typens:nextqueryrecordresponse" />
+  </message>
+  <message name="queryidrequest">
+    <part name="parameters" element="typens:queryid" />
+  </message>
+  <message name="queryidresponse">
+    <part name="parameters" element="typens:queryidresponse" />
+  </message>
+  <message name="queryrecordrequest">
+    <part name="parameters" element="typens:queryrecord" />
+  </message>
+  <message name="queryrecordresponse">
+    <part name="parameters" element="typens:queryrecordresponse" />
+  </message>
+  <message name="queryidnodaterequest">
+    <part name="parameters" element="typens:queryidnodate" />
+  </message>
+  <message name="queryidnodateresponse">
+    <part name="parameters" element="typens:queryidnodateresponse" />
+  </message>
+  <message name="queryentityrequest">
+    <part name="parameters" element="typens:queryentity" />
+  </message>
+  <message name="queryentityresponse">
+    <part name="parameters" element="typens:queryentityresponse" />
+  </message>
+  <message name="queryrequest">
+    <part name="parameters" element="typens:query" />
+  </message>
+  <message name="queryresponse">
+    <part name="parameters" element="typens:queryresponse" />
+  </message>
+  <message name="addrequest">
+    <part name="parameters" element="typens:add" />
+  </message>
+  <message name="addresponse">
+    <part name="parameters" element="typens:addresponse" />
+  </message>
+  <message name="addrecordrequest">
+    <part name="parameters" element="typens:addrecord" />
+  </message>
+  <message name="addrecordresponse">
+    <part name="parameters" element="typens:addrecordresponse" />
+  </message>
+  <message name="updaterecordrequest">
+    <part name="parameters" element="typens:updaterecord" />
+  </message>
+  <message name="updaterecordresponse">
+    <part name="parameters" element="typens:updaterecordresponse" />
+  </message>
+  <message name="deleterequest">
+    <part name="parameters" element="typens:delete" />
+  </message>
+  <message name="deleteresponse">
+    <part name="parameters" element="typens:deleteresponse" />
+  </message>
+  <message name="updaterequest">
+    <part name="parameters" element="typens:update" />
+  </message>
+  <message name="updateresponse">
+    <part name="parameters" element="typens:updateresponse" />
+  </message>
+  <message name="addresourcerequest">
+    <part name="parameters" element="typens:addresource" />
+  </message>
+  <message name="addresourceresponse">
+    <part name="parameters" element="typens:addresourceresponse" />
+  </message>
+  <message name="columnwidthrequest">
+    <part name="parameters" element="typens:columnwidth" />
+  </message>
+  <message name="columnwidthresponse">
+    <part name="parameters" element="typens:columnwidthresponse" />
+  </message>
+  <message name="getmetadatarequest">
+    <part name="parameters" element="typens:getmetadata" />
+  </message>
+  <message name="getmetadataresponse">
+    <part name="parameters" element="typens:getmetadataresponse" />
+  </message>
+  <message name="getallmetadatarequest">
+    <part name="parameters" element="typens:getallmetadata" />
+  </message>
+  <message name="getallmetadataresponse">
+    <part name="parameters" element="typens:getallmetadataresponse" />
+  </message>
+  <message name="getdropdownvaluesrequest">
+    <part name="parameters" element="typens:getdropdownvalues" />
+  </message>
+  <message name="getdropdownvaluesresponse">
+    <part name="parameters" element="typens:getdropdownvaluesresponse" />
+  </message>
+  <message name="getversionstringrequest">
+    <part name="parameters" element="typens:getversionstring" />
+  </message>
+  <message name="getversionstringresponse">
+    <part name="parameters" element="typens:getversionstringresponse" />
+  </message>
+  <portType name="WebServiceSoapPort">
+    <operation name="logon">
+      <input message="typens:logonrequest" />
+      <output message="typens:logonresponsetype" />
+    </operation>
+    <operation name="logoff">
+      <input message="typens:logoffrequest" />
+      <output message="typens:logoffresponsetype" />
+    </operation>
+    <operation name="next">
+      <documentation>Query the crm database for a recordset based on a SQL Where clause</documentation>
+      <input message="typens:nextrequest" />
+      <output message="typens:nextresponse" />
+    </operation>
+    <operation name="nextqueryrecord">
+      <documentation>Query the crm database for a recordset based on a SQL Where clause</documentation>
+      <input message="typens:nextqueryrecordrequest" />
+      <output message="typens:nextqueryrecordresponse" />
+    </operation>
+    <operation name="query">
+      <documentation>Query the crm database for a recordset based on a SQL Where clause</documentation>
+      <input message="typens:queryrequest" />
+      <output message="typens:queryresponse" />
+    </operation>
+    <operation name="queryentity">
+      <documentation>Query the crm database for a specific record on a specific table - i.e. company 75</documentation>
+      <input message="typens:queryentityrequest" />
+      <output message="typens:queryentityresponse" />
+    </operation>
+    <operation name="queryid">
+      <documentation>Returns a set of id's based on a token date time, used for synching records</documentation>
+      <input message="typens:queryidrequest" />
+      <output message="typens:queryidresponse" />
+    </operation>
+    <operation name="queryidnodate">
+      <documentation>As above but without the token, simply returns a list of AIS ids, this is to facilitate AIS integration</documentation>
+      <input message="typens:queryidnodaterequest" />
+      <output message="typens:queryidnodateresponse" />
+    </operation>
+    <operation name="queryrecord">
+      <documentation>Specify what fields are to be selected, a where clause and order by, reurns a list of CRMRecord objects</documentation>
+      <input message="typens:queryrecordrequest" />
+      <output message="typens:queryrecordresponse" />
+    </operation>
+    <operation name="add">
+      <documentation>Save a strongly typed object into a crm database record i.e. company</documentation>
+      <input message="typens:addrequest" />
+      <output message="typens:addresponse" />
+    </operation>
+    <operation name="addrecord">
+      <documentation>Save an object into a crm database record using the CRMRecord type</documentation>
+      <input message="typens:addrecordrequest" />
+      <output message="typens:addrecordresponse" />
+    </operation>
+    <operation name="updaterecord">
+      <documentation>Update an object in crm using a field record list within a CRMRecord type</documentation>
+      <input message="typens:updaterecordrequest" />
+      <output message="typens:updaterecordresponse" />
+    </operation>
+    <operation name="update">
+      <documentation>update a crm database record</documentation>
+      <input message="typens:updaterequest" />
+      <output message="typens:updateresponse" />
+    </operation>
+    <operation name="delete">
+      <documentation>Delete an object from the crm database</documentation>
+      <input message="typens:deleterequest" />
+      <output message="typens:deleteresponse" />
+    </operation>
+    <operation name="addresource">
+      <documentation>add an User as a resource, this user will be disabled and must still be activated within CRM</documentation>
+      <input message="typens:addresourcerequest" />
+      <output message="typens:addresourceresponse" />
+    </operation>
+    <operation name="altercolumnwidth">
+      <documentation>Change the width of a column in the crm database</documentation>
+      <input message="typens:columnwidthrequest" />
+      <output message="typens:columnwidthresponse" />
+    </operation>
+    <operation name="getmetadata">
+      <documentation>get a meta data description for a given table</documentation>
+      <input message="typens:getmetadatarequest" />
+      <output message="typens:getmetadataresponse" />
+    </operation>
+    <operation name="getallmetadata">
+      <documentation>get a meta data description for all tables</documentation>
+      <input message="typens:getallmetadatarequest" />
+      <output message="typens:getallmetadataresponse" />
+    </operation>
+    <operation name="getdropdownvalues">
+      <documentation>Lists the various valid values for a given dropdown field.</documentation>
+      <input message="typens:getdropdownvaluesrequest" />
+      <output message="typens:getdropdownvaluesresponse" />
+    </operation>
+    <operation name="getversionstring">
+      <documentation>Will return the Version info for the CRM install publishing this web service.</documentation>
+      <input message="typens:getversionstringrequest" />
+      <output message="typens:getversionstringresponse" />
+    </operation>
+  </portType>
+  <binding name="WebServiceSoapBinding" type="typens:WebServiceSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="logon">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="logoff">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="next">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="nextqueryrecord">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="query">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="queryentity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="queryrecord">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="queryidnodate">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="queryid">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="add">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addrecord">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updaterecord">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="update">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="delete">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addresource">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="altercolumnwidth">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getmetadata">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getallmetadata">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getdropdownvalues">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getversionstring">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:header message="typens:Header" part="SessionHeader" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WebService">
+    <port name="WebServiceSoapPort" binding="typens:WebServiceSoapBinding">
+      <soap:address location="http://192.168.2.74/crm/eware.dll/WebServices/SOAP" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,7 @@
+C:\www\asp\Warwick\Warwick\bin\Debug\Warwick.exe.config
+C:\www\asp\Warwick\Warwick\bin\Debug\Warwick.exe
+C:\www\asp\Warwick\Warwick\bin\Debug\Warwick.pdb
+C:\www\asp\Warwick\Warwick\bin\Debug\OpenPop.dll
+C:\www\asp\Warwick\Warwick\obj\Debug\Warwick.exe
+C:\www\asp\Warwick\Warwick\obj\Debug\Warwick.pdb
+C:\www\asp\Warwick\Warwick\obj\Debug\Warwick.csprojResolveAssemblyReference.cache
